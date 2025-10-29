@@ -3,9 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Verb Isight</title>
 </head>
 <body>
-    
+    <header>
+        <h1>Verb Insight</h1>
+        <p>No conoces un verbo en ingles? <br> Escribelo y te diremos todo sobre el</p>
+    </header>
+
+    <main>
+        <!-- Seccion de busqueda -->
+        <section class="search-section">
+            <input 
+            type="text"
+            id="verbInput"
+            placeholder="Escribe un verbo en ingles ..."
+            autocomplete="off">
+            <button id="searchButton">Buscar</button>
+        </section>
+
+        <!-- Seccion de resultados -->
+        <section class="result-section">
+            <div class="verb-cards">
+                <div class="card">
+                    <h3>Forma base</h3>
+                    <p id="baseFrom">-</p>
+                </div>
+
+                <div class="card">
+                    <h3>Pasado simple</h3>
+                    <p id="pastSimple">-</p>
+                </div>
+
+                <div class="card">
+                    <h3>Pasado participio</h3>
+                    <p id="pastParticiple">-</p>
+                </div>
+            </div>
+
+            <div class="description">
+                <h3>Significado o descripcion</h3>
+                <p id="verbDescription">Aqui aparecera la informacion del verbo.</p>
+            </div>
+        </section>
+
+        <footer>
+            <section>
+                <p>© 2025 Verb Insight. Todos los derechos reservados.</p>
+            </section>
+        </footer>
+
+        <script src="script.js"></script>
+    </main>
 </body>
 </html>
