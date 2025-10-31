@@ -8,8 +8,8 @@
 
 /* --- Estructura general --- */
 body {
-    background-color: #838383;
-    color: #333;
+    background-color: #26282e;
+    color: #ffffff;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -18,43 +18,54 @@ body {
 header {
     text-align: center;
     padding: 2rem 1rem;
-    background: #fff;
+    background: #404040;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 main {
     flex: 1;
-    padding: 2rem;
+    padding: 1rem;
 }
 
 /* --- Sección de búsqueda --- */
 .search-section {
     text-align: center;
     margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
 }
 
 #verbInput {
-    width: 250px;
-    padding: 0.6rem;
-    border: 1px solid #ccc;
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    padding: 0.8rem;
+    background-color: #404040;
+    border: 2px solid #ffffff;
+    color: #fafafa;
     border-radius: 8px;
     outline: none;
     transition: border-color 0.2s;
+    font-size: 1rem;
 }
 
 #verbInput:focus {
-    border-color: #0078ff;
+    border-color: #fafafa;
 }
 
 #searchButton {
-    margin-left: 1rem;
-    padding: 0.6rem 1.2rem;
-    border: none;
-    background-color: #0078ff;
-    color: white;
+    padding: 0.8rem 2rem;
+    border: 2px solid #ffffff;
+    background-color: #009DED;
+    color: #ffffff;
     border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.3s;
+    font-size: 1rem;
+    width: 100%;
+    max-width: 200px;
 }
 
 #searchButton:hover {
@@ -64,36 +75,132 @@ main {
 /* --- Resultados --- */
 .verb-cards {
     display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 1rem;
     margin-bottom: 2rem;
 }
 
 .card {
-    background: #fff;
-    width: 200px;
+    background: #525252;
     text-align: center;
     padding: 1.5rem;
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    width: 100%;
 }
 
 .card h3 {
-    color: #0078ff;
+    color: #009DED;
     margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.card p {
+    font-size: 1.2rem;
+    font-weight: bold;
 }
 
 .description {
-    background: #fff;
-    padding: 1rem;
+    text-align: center;
+    background: #525252;
+    padding: 1.5rem;
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+    width: 90%;
+    max-width: 700px; 
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.description h3 {
+    color: #009DED;
+    margin-bottom: 1rem;
+}
+
+.description p {
+    margin-top: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.highlight {
+    color: #009DED;
+    font-weight: bold;
+    background-color: rgba(0, 157, 237, 0.1);
+    padding: 0.1rem 0.3rem;
+    border-radius: 3px;
+}
+
+/* --- Media Queries --- */
+
+/* Tablet (768px en adelante) */
+@media (min-width: 768px) {
+    main {
+        padding: 2rem;
+    }
+    
+    .search-section {
+        flex-direction: row;
+        justify-content: center;
+    }
+    
+    #verbInput {
+        width: 300px;
+    }
+    
+    #searchButton {
+        width: auto;
+    }
+    
+    .verb-cards {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .card {
+        width: calc(50% - 0.5rem);
+        min-width: 200px;
+    }
+}
+
+/* Desktop (1024px en adelante) */
+@media (min-width: 1024px) {
+    .verb-cards {
+        flex-wrap: nowrap;
+        justify-content: space-around;
+    }
+    
+    .card {
+        width: 200px;
+    }
+    
+    .search-section {
+        margin-bottom: 3rem;
+    }
+    
+    #verbInput {
+        width: 400px;
+        padding: 1rem;
+    }
+    
+    #searchButton {
+        padding: 1rem 2.5rem;
+    }
+}
+
+/* Pantallas muy grandes (1200px en adelante) */
+@media (min-width: 1200px) {
+    main {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
 }
 
 footer {
     text-align: center;
     padding: 1rem;
-    background-color: #fff;
+    background-color: #525252;
     font-size: 0.9rem;
     box-shadow: 0 -1px 4px rgba(0,0,0,0.1);
 }
