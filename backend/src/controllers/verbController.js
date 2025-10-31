@@ -7,7 +7,7 @@ export const getVerbInfo = (req, res) => {
     // Consulta SQL: busca el verbo en cualquiera de sus formas
     const query = `
         SELECT * FROM verbs
-        WHERE base_form = ? OR past_simple = ? OR past_participle = ?
+        WHERE base_form = ? OR past_simple = ? OR past_participle = ? OR translation = ?
     `;
 
     db.get(query, [verb, verb, verb], (err, row) => {
@@ -21,7 +21,7 @@ export const getVerbInfo = (req, res) => {
                 base_form: row.base_form,
                 past_simple: row.past_simple,
                 past_participle: row.past_participle,
-                description: `El verbo "${row.base_form}" significa [traducción pendiente]. Su pasado simple es "${row.past_simple}" y su participio pasado es "${row.past_participle}".`
+                translation: `El verbo "${row.base_form}" significa ${row.translation}. Su pasado simple es "${row.past_simple}" y su participio pasado es "${row.past_participle}".`
             });
         }
     });

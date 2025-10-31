@@ -1,5 +1,5 @@
 document.getElementById("searchButton").addEventListener("click", async () => {
-    const verb = document.getElementById("verbInput").ariaValueMax.thrim();
+    const verb = document.getElementById("verbInput").value.trim();
 
     if (!verb) {
         alert("Por favor. escriba un verbo");
@@ -14,8 +14,8 @@ document.getElementById("searchButton").addEventListener("click", async () => {
             // Actualizamos los valores en la pagina
             document.getElementById("baseForm").textContent = data.base_form || "-";
             document.getElementById("pastSimple").textContent = data.past_simple || "-";
-            document.getElementById("pasParticiple").textContent = data.past_participle || "_";
-            document.getElementById("meaning").textContent = data.meaning || "-";
+            document.getElementById("pastParticiple").textContent = data.past_participle || "_";
+            document.getElementById("translation").textContent = data.translation || "-";
         } else {
             alert(data.message || "Verbo no encontrado");
         }
