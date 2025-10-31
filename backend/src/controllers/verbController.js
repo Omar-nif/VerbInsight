@@ -10,7 +10,7 @@ export const getVerbInfo = (req, res) => {
         WHERE base_form = ? OR past_simple = ? OR past_participle = ? OR translation = ?
     `;
 
-    db.get(query, [verb, verb, verb], (err, row) => {
+    db.get(query, [verb, verb, verb, verb], (err, row) => {
         if (err) {
             console.error("Error al buscar el verbo:", err.message);
             res.status(500).json({ error: "Error interno del servidor" });
@@ -21,7 +21,12 @@ export const getVerbInfo = (req, res) => {
                 base_form: row.base_form,
                 past_simple: row.past_simple,
                 past_participle: row.past_participle,
-                translation: `El verbo "${row.base_form}" significa ${row.translation}. Su pasado simple es "${row.past_simple}" y su participio pasado es "${row.past_participle}".`
+                translation: `
+                    El verbo "${row.base_form}" significa 
+                    "${row.translation}". 
+                    Su pasado simple es "${row.past_simple}" 
+                    y su participio pasado es "${row.past_participle}".
+                `
             });
         }
     });

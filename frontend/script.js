@@ -20,6 +20,9 @@ document.getElementById("searchButton").addEventListener("click", async () => {
             alert(data.message || "Verbo no encontrado");
         }
 
+        verbInput.value = '';
+        verbInput.focus();
+
     } catch (error) {
         console.error("Error al obtener el verbo:", error);
         alert("Pcurrio un error al coectar con el servidor.");
