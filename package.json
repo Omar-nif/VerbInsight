@@ -1,13 +1,15 @@
 {
-  "name": "backend",
+  "name": "verbsinsight",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Proyecto Verb Insight",
+  "main": "src/app.js",
+  "type": "module",
   "scripts": {
+    "start": "node src/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Omar",
   "license": "ISC",
   "dependencies": {
     "axios": "^1.13.1",
