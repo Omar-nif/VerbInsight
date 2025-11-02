@@ -7,7 +7,8 @@ document.getElementById("searchButton").addEventListener("click", async () => {
     }
 
     try {
-        const response = await fetch(`http://localhost:3000/api/verbs/${verb}`);
+        const response = await fetch(`/api/verbs/${verb}`)
+        ;
         const data = await response.json();
 
         if (response.ok) {
