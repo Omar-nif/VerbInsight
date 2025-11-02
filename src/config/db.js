@@ -1,7 +1,7 @@
 import sqlite3 from "sqlite3";
 
 // Creamos una base de datos
-const db = new sqlite3.Database("../verbs.db", (err) => {
+const db = new sqlite3.Database("../../verbs.db", (err) => {
     if (err) {
         console.error("Error al conectar con la base de datos:", err.message);
     } else {
