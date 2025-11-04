@@ -5,7 +5,7 @@ import sqlite3 from "sqlite3";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const dbPath = path.join(__dirname, "..", "verbs.db");
+const dbPath = path.join(__dirname, "..","..", "verbs.db");
 
 const db = new sqlite3.Database(dbPath, (err) => {
     if (err) {
