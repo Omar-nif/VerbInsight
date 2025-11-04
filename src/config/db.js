@@ -1,7 +1,13 @@
 import sqlite3 from "sqlite3";
 
 // Creamos una base de datos
-const db = new sqlite3.Database("../verbs.db", (err) => {
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const dbPath = path.join(__dirname, "..", "verbs.db");
+
+const db = new sqlite3.Database(dbPath, (err) => {
     if (err) {
         console.error("Error al conectar con la base de datos:", err.message);
     } else {
